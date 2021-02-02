@@ -11,6 +11,7 @@ class AttendancesController < ApplicationController
   end
   def create
     @attendance = Attendance.new(attendance_params)
+    @attendance.user_id = current_user.id 
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to @attendance, notice: 'The attendance was successfully created.' }

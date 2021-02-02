@@ -2,6 +2,27 @@
 
 <h1 class="header">Events</h1>
 <h3>This user created the following events</h3>
+
+<h3>All events</h3>
+
 <%= render partial: "listevents", locals: { event: @events } %>
+
+<h3>Past events</h3>
+
+<% @past_events.each do |event| %>
+  <%= event.title %><br>
+  <%= event.date %><br>
+  <p>Created by: <%= User.where("id = ?", event.creator_id).first.email  %> </p>
+<% end %>
+
+<h3>Future events</h3>
+
+<% @upcoming_events.each do |event| %>
+  <%= event.title %><br>
+  <%= event.date %><br>
+  <p>Created by: <%= User.where("id = ?", event.creator_id).first.email  %> </p>
+<% end %>
+
+<br>
 
 <%= show_create_event_link %>

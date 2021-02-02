@@ -4,12 +4,14 @@ class EventsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @events = Event.all
+    @upcoming_events = @events.upcoming_events
+    @past_events = @events.past_events
   end
 
   # GET /posts/1 or /posts/1.json
   def show
     @event = Event.find(params[:id])
-    @attendees = @event.attendances
+    @attendees = Attendance.where("attended_event_id = ?", @event.id)
   end
 
   # GET /posts/new
