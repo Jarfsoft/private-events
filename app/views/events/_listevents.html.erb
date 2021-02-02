@@ -1,15 +1,18 @@
-<% @events.each do |post| %>
+<% @events.each do |event| %>
     <p class="float-right">
       Created by:
-      <%#= show_author_if_logged_in(post) %>
+      <%= show_email_if_logged_in %>
     </p>
-    <h4 class="float-left"><%=post.date %></h4>
-    <p class="clear"><%= post.location %></p>
+    <p><%= event.title %></p>
+    <h4 class="float-left"><%=event.date %></h4>
+    <p class="clear"><%= event.location %></p>
     <%=  %>
     <p>
-    <%#= show_edit_post(post) %>
-    <%#= show_destroy_post(post) %>
+    <%#= show_edit_event(event) %>
+    <%#= show_destroy_event(event) %>
     </p>
+
+
 
 <% end %>
 

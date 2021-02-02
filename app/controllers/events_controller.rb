@@ -18,4 +18,21 @@ class EventsController < ApplicationController
 
   # GET /posts/1/edit
   def edit; end
+
+  def create
+    @event = current_user.events.create(event_params)
+    respond_to do |format|
+      if @event.save
+        format.html { redirect_to @event, notice: 'The event was successfully created.' }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:title, :date, :location)
+  end
 end

@@ -1,4 +1,4 @@
-<h1>Create Event</h1>
+<h1>Create an event</h1>
 
 <%= form_for @event do |form| %>
   <% if @event.errors.any? %>
@@ -12,6 +12,10 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
 
   <div class="field">
     <%= form.label :date %>

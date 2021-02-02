@@ -6,6 +6,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_column :events, :creator_id, :integer, index: true, foreign_key:true 
+    
   end
 end
