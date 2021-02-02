@@ -16,6 +16,7 @@ module ApplicationHelper
   end
 
   def show_new_attendance_link
-      link_to 'Want to attend this event?', new_attendance_path
+    #@attendance.attended_event_id = @event.id
+    link_to 'Want to attend this event?', new_attendance_path
   end
 end

@@ -3,17 +3,21 @@ class AttendancesController < ApplicationController
     @attendances = Attendance.all
   end
   def show
-    @attendance = Attendance.where("attended_event_id = ? ", )
-    @event = Event.find(params[:id])
+    #@attendance = Attendance.where("attended_event_id = ? ", )
+    @attendance = Attendance.find(params[:id])
+    @event = Event.find(@attendance.attended_event_id)
   end
   def new
     @attendance = Attendance.new
+    @attendance.attendee_id = current_user.id
   end
   def create
 
-    @attendance = Attendance.new(attendance_params)
-    @event = Event.find(params[:id])
+    #@attendance = Attendance.new(attendance_params)
+    @attendance = current_user.attendanced.build(attended_event_id: params[:event_id])
+    #@event = Event.find(params[:id])
     @attendance.attendee_id = current_user.id
+    @event = Event.find(@attendance.attended_event_id)
     @attendance.attended_event_id = @event.id
     respond_to do |format|
       if @attendance.save
