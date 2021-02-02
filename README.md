@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # Ruby on Rails Members-Only
 
-> Welcome to our **Ruby on Rails Members-Only** project built mainly with `Ruby` and `Ruby on Rails`. The main purpose of this app is to practice *authentication* in `Ruby on Rails` and for this the `Ruby`.
+> Welcome to our **Ruby on Rails Private-Events** project built mainly with `Ruby` and `Ruby on Rails`. The main purpose of this app is to practice *associations* in `Ruby on Rails` and for this the `Ruby`.
 
 ![screenshot](./images/screenshot.png)
 
