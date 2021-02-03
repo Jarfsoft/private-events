@@ -14,4 +14,8 @@ module UsersHelper
   def show_destroy_post(post)
     link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
   end
+
+  def show_user_link(user)
+    link_to 'Show', user_path(user)
+  end
 end
