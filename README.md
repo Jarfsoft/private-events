@@ -1,9 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-# Ruby on Rails Members-Only
+# Ruby on Rails Private Events
 
-> Welcome to our **Ruby on Rails Private-Events** project built mainly with `Ruby` and `Ruby on Rails`. The main purpose of this app is to practice *associations* in `Ruby on Rails` and for this the `Ruby`.
+> Welcome to our **Ruby on Rails Private-Events** project built mainly with `Ruby` and `Ruby on Rails`. The main purpose of this app is to practice *associations* in `Ruby on Rails`.
+Users can create and attend events only if they are logged in but they can only edit or delete their own profile.
 
-![screenshot](./images/screenshot.png)
+![screenshot](./app/assets/images/screenshot.png)
 
 ### Built With
 
@@ -20,7 +21,7 @@
 
 - Change to the project's root directory
 ```
-cd members-only
+cd private-events
 ```
 
 - Install the required gems
