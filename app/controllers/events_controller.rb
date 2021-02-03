@@ -14,7 +14,7 @@ class EventsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @event = Event.find(params[:id])
-    @attendees = Attendance.where("attended_event_id = ?", @event.id)
+    @attendees = Attendance.where('attended_event_id = ?', @event.id)
   end
 
   # GET /posts/new
@@ -47,5 +47,4 @@ class EventsController < ApplicationController
   def set_event
     @event = Event.find(params[:id])
   end
-
 end
