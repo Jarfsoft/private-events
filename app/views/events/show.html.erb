@@ -1,8 +1,8 @@
 <h1> <%= @event.title %> </h1>
 
 <p>People attending: </p>
-<p><%= Attendance.create(attended_event_id: @event.id, attendee_id = current_user.id) %></p>
+<p></p>
 <%= render partial: "listattendees", locals: { attendee: @attendees } %>
-
+<%# Attendance.create(attended_event_id: @event.id, attendee_id = current_user.id) %>
 
 

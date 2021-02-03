@@ -15,7 +15,7 @@ class AttendancesController < ApplicationController
   end
   def edit; end
   def create
-    @event = Event.find(params[:attended_event_id])
+    #@event = Event.find(params[:attended_event_id])
     @attendance = Attendance.new(attendance_params)
     #@attendance = current_user.attendance.build(attended_event_id: params[:event_id])
     #@event = Event.find(params[:id])
