@@ -36,12 +36,13 @@ module ApplicationHelper
   end
 
   def show_user_email(id)
-    User.where("id = ?", id).first.email
+    User.where('id = ?', id).first.email
   end
 
   def show_event_title(id)
     Event.where('id = ?', id).first.title
   end
+
   def list_created_events(id)
     Event.where('creator_id = ?', id)
   end
