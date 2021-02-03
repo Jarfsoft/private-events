@@ -17,6 +17,14 @@
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
+  <div class="header">
+  <% if signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% else %>
+    <%= link_to 'Sign in', new_user_session_url %>
+    <%= link_to "Sign Up", new_user_path %>
+  <% end %>
+</div>
   <div class="header">Logged in as <%= show_email_if_logged_in %> </div>
 
     <%= yield %>

@@ -3,15 +3,18 @@ class AttendancesController < ApplicationController
     @attendances = Attendance.all
   end
   def show
-    @attendance = Attendance.create(attendee_id: "1",attended_event_id: "1")
-    @event = Event.find(@attendance.attended_event_id)
+    @attendance = Attendance.where("attended_event_id = ? ", )
+    @event = Event.find(params[:id])
   end
   def new
     @attendance = Attendance.new
   end
   def create
+
     @attendance = Attendance.new(attendance_params)
-    @attendance.user_id = current_user.id 
+    @event = Event.find(params[:id])
+    @attendance.attendee_id = current_user.id
+    @attendance.attended_event_id = @event.id
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to @attendance, notice: 'The attendance was successfully created.' }

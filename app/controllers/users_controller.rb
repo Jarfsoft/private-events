@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def index
-    @user = User.all
+    @users = User.all
   end
 
 
@@ -15,7 +15,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
+    flash[:notice] = 'Account and all associated events successfully deleted.'
+    redirect_to root_url
   end
 
   def create
@@ -27,6 +30,9 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+
+  def edit; end
+
   private
 
   def user_params
