@@ -25,13 +25,22 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.password_confirmation = params[:user][:password]
     if @user.save
-      redirect_to root_url
+      redirect_to events_path
     else
       render 'new'
     end
   end
 
   def edit; end
+
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to 'show'
+    else
+      render 'edit'
+    end
+  end
 
   private
 

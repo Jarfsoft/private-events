@@ -1,12 +1,11 @@
 <% @events.each do |event| %>
     <p class="float-right">
-      Created by:
-      <%= show_email_if_logged_in %>
+      Created by: <%= User.where("id = ?", event.creator_id).first.email  %>
     </p>
     <p><%= event.title %></p>
     <h4 class="float-left"><%=event.date %></h4>
     <p class="clear"><%= event.location %></p>
-    <%=  %>
+    
     <p>
     <%#= show_edit_event(event) %>
     <%#= show_destroy_event(event) %>

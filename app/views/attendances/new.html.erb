@@ -2,8 +2,8 @@
 <%= form_with(model: @attendance) do |f| %>
 
   <p>
-    <%= f.label :attendee_id %> <br/>
-    <%= f.text_field :attendee_id, value: current_user.id %>
+    <% f.label :attendee_id %> <br/>
+    <% f.text_field :attendee_id, value: current_user.id %>
   </p>
   <p>
     <%= f.label :attended_event_id %><br />

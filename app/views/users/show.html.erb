@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
-<h2 class="user-profile-header">This is <%= current_user.email %>'s profile </h2>
+<h2 class="user-profile-header">This is <%= @user.email %>'s profile </h2>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= show_edit_user(@user) %> |
 <%= link_to 'Back', users_path %>
 <%= link_to "Sign out", destroy_user_session_path %>
 <h3> This user created the following events</h3>
   <%= render partial: "events/listeventscreated", locals: { event: @events } %>
+<h3> This user is attending the following events</h3>
+<%= render partial: "listeventsattending", locals: { user: @user } %>

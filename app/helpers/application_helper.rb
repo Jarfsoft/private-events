@@ -19,4 +19,17 @@ module ApplicationHelper
     # @attendance.attended_event_id = @event.id
     link_to 'Want to attend this event?', new_attendance_path
   end
+
+  def show_create_event_link
+    link_to 'Create an event', new_event_path if user_signed_in?
+  end
+  def show_attend_event_link
+    link_to 'Attend an event', new_attendance_path
+  end
+  def show_events_link
+    link_to 'Events', events_path
+  end
+  def show_users_link
+    link_to 'Members', users_path
+  end
 end

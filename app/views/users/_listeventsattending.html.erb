@@ -1,0 +1,6 @@
+<% a = Attendance.where("attendee_id = ?", user.id).all %>
+<% a.each do |attendance| %>
+  <p>
+    <%= Event.where("id = ?", attendance.attended_event_id).first.title %>
+  </p>
+<% end %>
