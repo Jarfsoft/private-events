@@ -8,4 +8,8 @@ module EventsHelper
 
     link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
   end
+
+  def show_event(event)
+    link_to 'Show', event_path(event) #if event.creator_id == current_user.id
+  end
 end
