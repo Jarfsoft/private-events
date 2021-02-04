@@ -1,13 +1,13 @@
 module ApplicationHelper
-   def show_email_if_logged_in
-     #if signed_in?
-  #     %{ <h5>'logged-in as'</h5>
-  #     <p>#{arg}</p>
-  #     }%
-  #   else
-  #     'Guest.'
-  #   end
-   end
+  def show_email_if_logged_in
+    # if signed_in?
+    #     %{ <h5>'logged-in as'</h5>
+    #     <p>#{arg}</p>
+    #     }%
+    #   else
+    #     'Guest.'
+    #   end
+  end
 
   def list_users_if_logged_in(user)
     if signed_in?
