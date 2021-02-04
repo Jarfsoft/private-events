@@ -8,9 +8,6 @@
   <p>
     <%= f.label :attended_event_id %><br />
     <%= f.collection_select :attended_event_id, Event.order(:title),:id,:title, include_blank: false %>
-
-
-
   </p>
     <%= f.submit %>
   </p>

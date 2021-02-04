@@ -1,6 +1,6 @@
 <% @attendees.each do |attendee| %>
   <p>
-    <%= User.where("id = ?", attendee.attendee_id).first.email %>
+    <%= show_user_email(attendee.attendee_id)%>
   </p>
 <% end %>
 

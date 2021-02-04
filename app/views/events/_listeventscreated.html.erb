@@ -1,4 +1,4 @@
-<% @my_events = Event.where('creator_id = ?', current_user.id)%>
+<% @my_events = list_created_events(current_user.id) %>
 <% @my_events.each do |event|%>
   <li><%= event.title %></li></br>
   <li><%= event.date %></li></br>

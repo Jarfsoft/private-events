@@ -1,1 +1,3 @@
-<h2>Show page for this attendance</h2>
+<h2>Attendance to event <%= show_event_title(@attendance.attended_event_id) %></h2>
+
+<%= determine_if_user_going_to_attend(@attendance)%>
