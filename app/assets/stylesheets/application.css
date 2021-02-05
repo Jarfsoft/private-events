@@ -22,16 +22,17 @@
 }
 
 a {
-  color: white !important;
+  color: black !important;
 }
 
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: darkslategray;
 }
 
 p {
-  color:rgb(31, 30, 30);
+  color: rgb(31, 30, 30);
 }
 
 li {
@@ -39,7 +40,8 @@ li {
 }
 
 li:hover {
-  background: linear-gradient(
+  background:
+  linear-gradient(
     45deg,
     rgba(192, 228, 221, 0.794),
     rgba(81, 70, 98, 0.5) 100%
@@ -47,24 +49,27 @@ li:hover {
 }
 
 form {
-  background: linear-gradient(
+  background:
+  linear-gradient(
     45deg,
     rgba(231, 241, 239, 0.794),
     rgba(219, 218, 219, 0.5) 100%
   );
 }
- body {
-  text-align: center!important;
-  background: linear-gradient(
+
+body {
+  text-align: center !important;
+  background:
+  linear-gradient(
     45deg,
     rgba(231, 241, 239, 0.794),
     rgba(253, 251, 253, 0.5) 100%
   );
- }
+}
 
 #new_event {
   padding: 2rem;
-  display: inline-block!important;
-  margin-left: auto!important;
-  margin-right: auto!important;
+  display: inline-block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
  }
