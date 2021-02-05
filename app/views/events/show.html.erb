@@ -1,6 +1,6 @@
-<h1> <%= @event.title %> </h1>
+<h1 class="header"> <%= @event.title %> </h1>
 
-<p>People attending: </p>
+<h3 class="header">People attending this event: </h3>
 
 <%= render partial: "listattendees", locals: { attendee: @attendees } %>
 <%= link_to 'Back', events_path %>

@@ -1,19 +1,23 @@
-<h1>Sign Up</h1>
+<h2 class="header p-2">Sign Up</h2>
 
-<%= form_for(@user) do |form| %>
-  <div class="d-flex">
+<%= form_for(@user, :html => {:class => 'header bg-light'}) do |form| %>
   <button type="button" class="btn btn-secondary">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.label :email %><br />
+    <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
   </button>
 
-  <button type="button" class="btn btn-secondary">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="field">
+    <button type="button" class="btn btn-secondary">
+      <%= form.label :password %><br />
+      <%= form.password_field :password, autocomplete: "current-password" %>
+    </button>
+  </div>
+  <div class="actions">
+  <button type="button" class="btn">
+    <%= form.submit "Log in" %>
   </button>
+  </div>
 
-  <button type="button" class="btn btn-secondary">
-    <%= form.submit %>
-  </button>
-</div>
 <% end %>
+
+

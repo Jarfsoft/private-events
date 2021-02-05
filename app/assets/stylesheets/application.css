@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
+@import "bootstrap";
+
 .header {
   text-align: center;
   vertical-align: middle;
@@ -23,3 +24,47 @@
 a {
   color: white !important;
 }
+
+
+h1, h2, h3 {
+  color: darkslategray;
+}
+
+p {
+  color:rgb(31, 30, 30);
+}
+
+li {
+  list-style: none;
+}
+
+li:hover {
+  background: linear-gradient(
+    45deg,
+    rgba(192, 228, 221, 0.794),
+    rgba(81, 70, 98, 0.5) 100%
+  );
+}
+
+form {
+  background: linear-gradient(
+    45deg,
+    rgba(231, 241, 239, 0.794),
+    rgba(219, 218, 219, 0.5) 100%
+  );
+}
+ body {
+  text-align: center!important;
+  background: linear-gradient(
+    45deg,
+    rgba(231, 241, 239, 0.794),
+    rgba(253, 251, 253, 0.5) 100%
+  );
+ }
+
+#new_event {
+  padding: 2rem;
+  display: inline-block!important;
+  margin-left: auto!important;
+  margin-right: auto!important;
+ }
