@@ -43,17 +43,10 @@ module ApplicationHelper
     Event.where('id = ?', id).first.title
   end
 
-  # def list_created_events(id)
-  #  Event.where('creator_id = ?', id)
-  # end
-
   def list_events_attending(user)
-    a = Attendance.where("attendee_id = ?", user.id).all
+    a = Attendance.where('attendee_id = ?', user.id).all
     a.each do |attendance|
-      Event.where("id = ?", attendance.attended_event_id).each do |event|
-        event.title
-      end
+      Event.where('id = ?', attendance.attended_event_id).each(&:title)
     end
-
   end
 end

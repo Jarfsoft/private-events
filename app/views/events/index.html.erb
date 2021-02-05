@@ -1,7 +1,7 @@
 
 <h1 class="header">Events</h1>
 <h3>This user created the following events</h3>
-<%= render partial: "listeventscreated", locals: { event: @events } %>
+<%= render partial: "listeventscreated", locals: { event: @events, user: current_user } %>
 
 <h3>All events</h3>
 

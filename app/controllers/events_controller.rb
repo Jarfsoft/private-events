@@ -37,6 +37,7 @@ class EventsController < ApplicationController
       end
     end
   end
+
   def destroy
     @event.destroy
     respond_to do |format|
@@ -47,6 +48,7 @@ class EventsController < ApplicationController
       end
     end
   end
+
   private
 
   def event_params
