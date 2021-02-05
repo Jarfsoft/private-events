@@ -31,7 +31,7 @@
 </div>
   <div class="header">
     <p>
-      Logged in as <%= show_email_if_logged_in %>
+      Logged in as <%= show_email_if_logged_in(current_user) %>
     </p>
   </div>
     <%= yield %>

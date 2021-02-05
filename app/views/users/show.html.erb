@@ -4,7 +4,12 @@
 <%= show_edit_user(@user) %> |
 <%= link_to 'Back', users_path %>
 <%= link_to "Sign out", destroy_user_session_path %>
-<h3> This user created the following events</h3>
-  <%= render partial: "events/listeventscreated", locals: { event: @events } %>
+
+<h3> This user created the following events </h3>
+  <%= render partial: "events/listeventscreated", locals: { created_events: @created_events } %>
 <h3> This user is attending the following events</h3>
 <%= render partial: "listeventsattending", locals: { user: @user } %>
+
+
+<h3>Test to access past_events</h3>
+<%= @upcoming_events.first.title %>

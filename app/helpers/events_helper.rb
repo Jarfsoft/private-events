@@ -10,6 +10,6 @@ module EventsHelper
   end
 
   def show_event(event)
-    link_to 'Show', event_path(event) # if event.creator_id == current_user.id
+    link_to 'Show', event_path(event)
   end
 end

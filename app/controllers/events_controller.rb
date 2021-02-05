@@ -37,7 +37,16 @@ class EventsController < ApplicationController
       end
     end
   end
-
+  def destroy
+    @event.destroy
+    respond_to do |format|
+      if @event.save
+        format.html { redirect_to events_path, notice: 'The event was successfully destroyed.' }
+      else
+        format.html { render :new, alert: 'An error ocurred while trying to destroy this event.' }
+      end
+    end
+  end
   private
 
   def event_params

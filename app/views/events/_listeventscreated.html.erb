@@ -1,5 +1,4 @@
-<% @my_events = list_created_events(current_user.id) %>
-<% @my_events.each do |event|%>
+<% @created_events.each do |event|%>
   <li><%= event.title %></li></br>
   <li><%= event.date %></li></br>
   <li><%= event.location %></li></br>

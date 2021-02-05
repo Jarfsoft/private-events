@@ -1,12 +1,10 @@
 module ApplicationHelper
-  def show_email_if_logged_in
-    # if signed_in?
-    #     %{ <h5>'logged-in as'</h5>
-    #     <p>#{arg}</p>
-    #     }%
-    #   else
-    #     'Guest.'
-    #   end
+  def show_email_if_logged_in(user)
+    if signed_in?
+      user.email
+    else
+      'Guest.'
+    end
   end
 
   def list_users_if_logged_in(user)
@@ -45,7 +43,17 @@ module ApplicationHelper
     Event.where('id = ?', id).first.title
   end
 
-  def list_created_events(id)
-    Event.where('creator_id = ?', id)
+  # def list_created_events(id)
+  #  Event.where('creator_id = ?', id)
+  # end
+
+  def list_events_attending(user)
+    a = Attendance.where("attendee_id = ?", user.id).all
+    a.each do |attendance|
+      Event.where("id = ?", attendance.attended_event_id).each do |event|
+        event.title
+      end
+    end
+
   end
 end
