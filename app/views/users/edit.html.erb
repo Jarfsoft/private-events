@@ -1,18 +1,19 @@
-<h1>Edit</h1>
+<h1>Edit <%= show_user_email(current_user.id) %>'s information </h1>
 
 <%= form_for(current_user) do |form| %>
-
-  <div class="field">
+<div class="d-flex">
+  <button type="button" class="btn btn-secondary">
     <%= form.label :email %>
     <%= form.text_field :email %>
-  </div>
+  </button>
 
-  <div class="field">
+  <button type="button" class="btn btn-secondary">
     <%= form.label :password %>
     <%= form.password_field :password %>
-  </div>
+  </button>
 
-  <div class="actions">
+  <button type="button" class="btn btn-secondary">
     <%= form.submit %>
-  </div>
+  </button>
+</div>
 <% end %>

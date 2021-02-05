@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-<h2 class="user-profile-header">This is <%= @user.email %>'s profile </h2>
+<h2 class="user-profile-header">This is <%= @user.email %>'s profile <button type="button" class="btn btn-secondary"><%= show_edit_user(@user) %></button>
+<button type="button" class="btn btn-secondary"><%= link_to 'Back', users_path %></button>
+<button type="button" class="btn btn-secondary"><%= link_to "Sign out", destroy_user_session_path %></button></h2>
 
 <h3> Past events attended by this user </h3>
   <% @past_events.each do |event| %>
@@ -14,7 +16,5 @@
   <%= event.title %>
 <% end %>
 </br>
-<%= show_edit_user(@user) %> |
-<%= link_to 'Back', users_path %>
-<%= link_to "Sign out", destroy_user_session_path %>
+
 

@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_column :events, :creator_id, :integer, index: true, foreign_key:true 
+    add_reference :events, :creator_id, :integer, index: true, foreign_key:true
+    # add_index :events, creator_id, :integer, unique: true
   end
 end

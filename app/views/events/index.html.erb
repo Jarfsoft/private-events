@@ -1,27 +1,40 @@
 
 <h1 class="header">Events</h1>
-<h3>This user created the following events</h3>
+<h3>The current user created the following events</h3>
 <%= render partial: "listeventscreated", locals: { event: @events, user: current_user } %>
 
 <h3>All events</h3>
 
-<%= render partial: "listevents", locals: { event: @events } %>
+<% @events.each do |event| %>
+
+  <p><%= event.title %></p>
+  <p><%=event.date %></p>
+  <p><%= event.location %></p>
+  <p> Created by: <%= show_user_email( event.creator_id)  %></p>
+
+  <%= show_event(event) %>
+  <%= show_edit_event(event) %>
+  <%= show_destroy_event(event) %>
+  </p>
+<% end %>
 
 <h3>Past events</h3>
 
 <% @past_events.each do |event| %>
-  <%= event.title %><br>
-  <%= event.date %><br>
+  <p><%= event.title %></p>
+  <p><%= event.date %></p>
+  <p><%= event.location %></p>
   <p>Created by: <%= show_user_email(event.creator_id)  %> </p>
 <% end %>
 
 <h3>Future events</h3>
 
 <% @upcoming_events.each do |event| %>
-  <%= event.title %><br>
-  <%= event.date %><br>
+  <p><%= event.title %></p>
+  <p><%= event.date %></p>
+  <p><%= event.location %></p>
   <p>Created by: <%= show_user_email(event.creator_id)  %> </p>
-  <%= show_event(event) %><br>
+  <p><%= show_event(event) %></p>
 
 <% end %>
 

@@ -13,8 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
 .header {
   text-align: center;
   vertical-align: middle;
   line-height: 15px;
+}
+
+a {
+  color: white !important;
 }
